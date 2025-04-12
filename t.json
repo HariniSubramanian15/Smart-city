@@ -1,0 +1,8 @@
+[
+    {"lat": 12.9900, "lng": 80.1700},
+    {"lat": 13.0300, "lng": 80.2700},
+    {"eta": "30 mins"},
+    {"message": "Error with Google Maps API"},
+    {"error": "OVER_QUERY_LIMIT"}
+
+]
