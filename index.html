@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chennai Smart Bus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKmIiz5+iinFj6JdmWlsvksxW+p4yQ+qE0nC6gQemigpYVMifP9E23o1wXk/edud9g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #map-container {
+            height: 400px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .autocomplete-dropdown {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border: 1px solid #ccc;
+            max-height: 200px;
+            overflow-y: auto;
+            position: absolute;
+            background-color: white;
+            z-index: 999;
+        }
+        .autocomplete-dropdown li {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .autocomplete-dropdown li:hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chennai Smart Bus</h1>
+        <div class="input-panel">
+            <label for="source">Source:</label>
+            <input type="text" id="source" name="source" placeholder="Enter source location">
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" placeholder="Enter destination location">
+            <button onclick="findRoutes()">Find Routes</button>
+        </div>
+
+        <div id="map-container"></div>
+
+        <div id="route-results">
+            <h2>Available Bus Routes</h2>
+            <ul id="routes-list"></ul>
+        </div>
+
+        <div id="eta-info">
+            <h2>Estimated Time to Reach</h2>
+            <p id="eta-message"></p>
+        </div>
+
+        <div id="google-suggested">
+            <h2>Google Suggested Routes</h2>
+            <ul id="suggested-routes"></ul>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
